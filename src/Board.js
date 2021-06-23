@@ -134,7 +134,7 @@
     // --------------------------------------------------------------
     //
     // test if a specific major diagonal on this board contains a conflict
-    //hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
+    // hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
     hasMajorDiagonalConflictAt: function(majorRow, majorCol) {
       var currRow = majorRow;
       var currCol = majorCol;
