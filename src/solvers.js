@@ -193,6 +193,7 @@ window.countNQueensSolutions = function(n) {
     var newCol = col;
     for (var i = row; i < n; i++) {
       while (newCol < n) {
+        /* */
         board.togglePiece(i, newCol);
         if (!board.hasAnyQueensConflicts()) {
           counter++;
@@ -208,6 +209,7 @@ window.countNQueensSolutions = function(n) {
           counter--;
         }
         board.togglePiece(i, newCol);
+        /* */
         newCol++;
       }
       newCol = 0;
@@ -218,6 +220,7 @@ window.countNQueensSolutions = function(n) {
   for (var row = 0; row < n; row++) {
     for (var col = 0; col < n; col++) {
       var counter = 0;
+      /* */
       board.togglePiece(row, col);
       if (!board.hasAnyQueensConflicts()) {
         counter++;
@@ -233,9 +236,13 @@ window.countNQueensSolutions = function(n) {
         counter--;
       }
       board.togglePiece(row, col);
+      /* */
     }
   }
 
+  if (n === 0) {
+    solutionArr.push([]);
+  }
   console.log('Number of solutions for ' + n + ' queens:', solutionArr.length);
   return solutionArr.length;
 
